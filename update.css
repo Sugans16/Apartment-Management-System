@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.container-update-form {
+  padding: 0 9.6rem;
+}
+
+.gird-container {
+  max-width: 130rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  justify-items: center;
+  background-color: #fff;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  padding: 2rem 4.3rem;
+  border-radius: 25px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.left-column {
+  padding: 2rem 5rem 10rem;
+  border-right: 2px solid #6998e8;
+}
+
+.left-column > img {
+  width: 30rem;
+  margin-top: 10rem;
+  border-radius: 50%;
+  position: relative;
+}
+
+.right-column {
+  padding: 2rem;
+}
+
+.register-label {
+  color: #333;
+  font-size: 3.4rem;
+  margin-bottom: 5rem;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+  row-gap: 2rem;
+}
+
+.input-child {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.alter-child {
+  padding-top: 0.1rem;
+  justify-content: space-around;
+}
+
+.input-child-disabled {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.choice-child {
+  width: 23rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.disabledPerson--child {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  display: none;
+}
+
+.input-child-disabled > div > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.label-one,
+.input-child > label,
+.input-child-disabled > label,
+.disabledPerson--child > label {
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.disabledPerson--child {
+  padding-bottom: 1rem;
+}
+
+.input-child > input,
+.pass-pack > input {
+  width: 20rem;
+  color: #333;
+  font-size: 1.8rem;
+  border: none;
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+}
+
+.dp-sec-child {
+  width: 5rem;
+  color: #333;
+  font-size: 1.8rem;
+  border: none;
+  border-bottom: 1px solid #333;
+}
+
+.radio-btn {
+  color: #333;
+  border: none;
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+}
+
+.submitbtn {
+  padding: 3rem 5rem;
+  margin-top: 1rem;
+}
+
+.submitbtn > input {
+  color: #fff;
+  background-color: #6998e8;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 1rem 4rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.child-last {
+  grid-column: span 3;
+}
+
+.i-btn {
+  color: #333;
+}

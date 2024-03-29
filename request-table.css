@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+header {
+  background-color: inherit;
+}
+
+.background-img-table {
+  background-image: url(images/Background/home-background.jpg);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: auto;
+
+  width: auto;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.list-head {
+  color: #fff;
+  background-color: #2a3650;
+  cursor: default;
+
+  display: inline-block;
+  font-size: 2.4rem;
+  padding: 2rem 3rem;
+  border-radius: 25px;
+}
+
+.list-table {
+  overflow: hidden;
+
+  margin: auto;
+  padding: 5rem;
+  margin-top: 8rem;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+table,
+tr,
+td {
+  border-collapse: collapse;
+  cursor: default;
+}
+
+thead {
+  background-color: #2a3650;
+  color: #fff;
+}
+
+th {
+  font-size: 2rem;
+  padding: 3.5rem 4rem;
+}
+
+td {
+  font-size: 2rem;
+  background-color: #fff;
+
+  padding: 1.5rem 3rem;
+  border-bottom: 1px solid #aaa;
+}
+
+.approve-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.approve-btn > button {
+  display: flex;
+  align-items: center;
+
+  padding: 1.5rem;
+  border: none;
+  border-radius: 50%;
+}
+
+.child-red,
+.child-green {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.child-red {
+  background-color: #db3056;
+}
+
+.child-green {
+  background-color: #03a65a;
+}
+
+.fix-last--td {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1.5rem;
+}
+
+.three-buttons {
+  width: 80rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.three-buttons > button {
+  background-color: #2a3650;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  padding: 1rem 3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+}
+
+.three-buttons > button:hover {
+  background-color: #bbd3f5;
+  color: #333;
+  transform: translate(5px, -5px);
+}
+
+.deliveryR {
+  color: #2a3650;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.pd-remove {
+  padding: 3.5rem 2rem;
+  width: 40rem;
+}
+
+@media (max-width: 53em) {
+  .home-nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  th {
+    padding: 2rem 3.5rem;
+  }
+
+  .md-padding {
+    padding: 1rem 0;
+  }
+
+  .child-red {
+    margin-right: 0.5rem;
+  }
+}
+
+@media (max-width: 40em) {
+  .list-table {
+    margin-top: 17rem;
+  }
+}

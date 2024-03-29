@@ -1,0 +1,114 @@
+{
+  "1": {
+    "backgroundColor": "#F2DEDF",
+    "textColor": "#AA4247",
+    "icon": "reject-icon",
+    "errortitle": "Oh snap!",
+    "errorMsg": "Your Profile is Rejected. Signup Again with Correct information."
+  },
+  "2": {
+    "backgroundColor": "#E2E3E5",
+    "textColor": "#3C4246",
+    "icon": "wait-icon",
+    "errortitle": "Sorry",
+    "errorMsg": "Your Profile Validation Still in Pending."
+  },
+  "3": {
+    "backgroundColor": "#FFF5E7",
+    "textColor": "#B26000",
+    "icon": "error-icon",
+    "errortitle": "You sure!",
+    "errorMsg": "Username or password must be wrong"
+  },
+  "4": {
+    "backgroundColor": "#F2DEDF",
+    "textColor": "#AA4247",
+    "icon": "reject-icon",
+    "errortitle": "Oh snap!",
+    "errorMsg": "Could not able to connect with server, Try again."
+  },
+  "5": {
+    "backgroundcolor": "#FFF5E7",
+    "textColor": "#B26000",
+    "icon": "error-icon",
+    "errortitle": "You sure!",
+    "errorMsg": "Please check your username and password."
+  },
+  "6": {
+    "backgroundColor": "#DEF0D8",
+    "textColor": "#3A7B50",
+    "icon": "login-icon",
+    "errortitle": "Well Done!",
+    "errorMsg": "Your Account is Created, You can Login Now"
+  },
+  "7": {
+    "backgroundColor": "#D9EDF6",
+    "textColor": "#336E86",
+    "icon": "wait-icon",
+    "errortitle": "Heads up!",
+    "errorMsg": "Wait Until Admin Validates Your Profile."
+  },
+  "8": {
+    "backgroundColor": "#F2DEDF",
+    "textColor": "#AA4247",
+    "icon": "reject-icon",
+    "errortitle": "Oh snap!",
+    "errorMsg": "Previous rejection updated.Please await admin validation.."
+  },
+  "tamil1": {
+    "backgroundColor": "#F2DEDF",
+    "textColor": "#AA4247",
+    "icon": "reject-icon",
+    "errortitle": "மன்னிக்கவும்!",
+    "errorMsg": "உங்கள் கோரிக்கை நிராகரிக்கப்பட்டது. சரியான தகவலுடன் மீண்டும் பதிவுசெய்க."
+  },
+  "tamil2": {
+    "backgroundColor": "#E2E3E5",
+    "textColor": "#3C4246",
+    "icon": "wait-icon",
+    "errortitle": "காத்திருங்கள்!",
+    "errorMsg": "உங்கள் கோரிக்கை இன்னும் நிலுவையில் உள்ளது."
+  },
+  "tamil3": {
+    "backgroundColor": "#FFF5E7",
+    "textColor": "#B26000",
+    "icon": "error-icon",
+    "errortitle": "சரிபார்க்கவும்!",
+    "errorMsg": "உங்கள் பெயர் மற்றும் கடவுச்சொல்லைச் சரிபார்க்கவும்."
+  },
+  "tamil4": {
+    "backgroundColor": "#F2DEDF",
+    "textColor": "#AA4247",
+    "icon": "reject-icon",
+    "errortitle": "மன்னிக்கவும்!",
+    "errorMsg": "சேவை இணைக்க முடியவில்லை, மீண்டும் முயற்சிக்கவும்."
+  },
+  "tamil5": {
+    "backgroundcolor": "#FFF5E7",
+    "textColor": "#B26000",
+    "icon": "error-icon",
+    "errortitle": "சரிபார்க்கவும்!",
+    "errorMsg": "உங்கள் பெயர் மற்றும் கடவுச்சொல்லைச் சரிபார்க்கவும்."
+  },
+  "tamil6": {
+    "backgroundColor": "#DEF0D8",
+    "textColor": "#3A7B50",
+    "icon": "login-icon",
+    "errortitle": "ஆஹா!",
+    "errorMsg": "உங்கள் கணக்கு உருவாக்கப்பட்டது, நீங்கள் இப்போது உள்நுழையலாம்"
+  },
+  "tamil7": {
+    "backgroundColor": "#D9EDF6",
+    "textColor": "#336E86",
+    "icon": "wait-icon",
+    "errortitle": "காத்திருங்கள்!",
+    "errorMsg": "நிர்வாகி உங்கள் சுயவிவரத்தை சரிபார்க்கும் வரை காத்திருங்கள்."
+  },
+  "tamil8": {
+    "backgroundColor": "#F2DEDF",
+    "textColor": "#AA4247",
+    "icon": "reject-icon",
+    "errortitle": "நிறைவு!",
+    "errorMsg": "முந்தைய நிராகரிப்பு புதுப்பிக்கப்பட்டது.நிர்வாக சரிபார்ப்புக்காக காத்திருங்கள்.."
+  }
+}

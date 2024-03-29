@@ -1,0 +1,135 @@
+
+index pages
+-------------
+    4 login pages;
+	-admin login
+	-user login
+	-security login
+	-maintanence login
+	
+admin login
+-------------(profile, registration, complaint, support)
+
+	registration
+	-------------
+		user (tenant/owner)
+		security
+		maintanence
+
+		Registration user
+		------------------
+			Owner Name
+			Tenant Name
+			Phone no
+			e-mail
+			flat no
+			block no
+			Username
+			Password
+			
+		Security / Maintanence
+		-------------------------
+			Name
+			phone no
+			address
+			Email
+			security/maintanence ID
+			username
+			password
+	
+	Complaint
+	---------
+		plot no
+		owner name
+		tenant name
+		type
+		complaint regarding
+		status
+
+
+user login
+-------------(profile(nav), security connect, maintenance connect, admin connect,complaint/issues, support)
+
+<?php
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user = $_POST['username'];
+    $pass = $_POST['userpassword'];
+
+    $hostname = "localhost";
+    $usernamee = "root";
+    $password = "";
+    $database = "ams";
+
+    $con = new mysqli($hostname, $usernamee, $password, $database);
+
+    $query = "SELECT * FROM user_signup WHERE username = '$user' and u_password = '$pass' " ;
+    $result = $con->query($query);
+    if ($result->num_rows >= 1) {
+      $row = $result->fetch_assoc();
+      $status = $row['status'] ?? null;
+
+    if ($status == "Accepted"){
+
+      $query = "SELECT * FROM users WHERE username = '$user' and password = '$pass' " ; 
+
+      $result = $con->query($query);
+
+      if ($result->num_rows >= 1) {
+        setcookie("user", $user);
+        $output=true;
+        header('Content-Type: application/json');
+        echo json_encode($output);
+        exit();
+      } else {
+        $error = array(
+          'backgroundColor' => '#FFF5E7',
+          'textColor' => '#B26000',
+          'icon' => 'error-icon',
+          'errortitle' => "You sure!",
+          'errorMsg' => "Check Your Username and Password"
+        );
+        header('Content-Type: application/json');
+         echo json_encode($error); 
+         exit();
+    }
+
+  }else if ($status == "Rejected") {
+    $rejected = array(
+      'backgroundColor' => '#F2DEDF',
+      'textColor' => '#AA4247',
+      'icon' => 'reject-icon',
+      'errortitle' => "Oh snap!",
+      'errorMsg' => "Your Profile is Rejected. Signup Again with Correct information."
+    );
+    header('Content-Type: application/json');
+   echo json_encode($rejected);
+   exit();
+  }else {
+    $pending = array(
+      'backgroundColor' => '#E2E3E5',
+      'textColor' => '#3C4246',
+      'icon' => 'wait-icon',
+      'errortitle' => "Sorry",
+      'errorMsg' => "Your Profile Still in Pending."
+    );
+    header('Content-Type: application/json');
+  echo json_encode($pending);
+  exit();
+  }
+   
+  } else {
+    $error = array(
+      'backgroundColor' => '#FFF5E7',
+      'textColor' => '#B26000',
+      'icon' => 'error-icon',
+      'errortitle' => "You sure!",
+      'errorMsg' => "Check Your Username and Password",
+    );
+    header('Content-Type: application/json');
+    echo json_encode($error);
+    exit();
+}
+
+}
+?>

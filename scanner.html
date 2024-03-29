@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AMS-Visitor Page</title>
+  <link rel="shortcut icon" href="images/Favicon/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-home.css">
+  <link rel="stylesheet" href="or.css">
+
+</head>
+
+<body>
+  <div class="backgroundimg-home">
+    <header>
+      <nav>
+        <a href="security-homepage.php"> <img class="logo" src="images/logo/App Logo2.png" alt="company-logo"></a>
+      </nav>
+    </header>
+    <div>
+
+      <div class="scanner-container">
+        <h2 class="scanner-title">Scan QR Code</h2>
+        <p class="scanner-text">
+          Place QR code inside the frame and avoid shake to get result quickly
+        </p>
+        <div class="control-scanner-hight">
+          <video id="preview"></video>
+          <canvas id="canvas"></canvas>
+        </div>
+        <br>
+        <p class="scanner-text mg-1">Camera is not working? <span class="swap-manual">Try
+            Manually</span></p>
+        <button class="start-btn" id="startScan">Start scanning</button>
+        <button class="stop-btn" id="stopScan">Stop scanning</button>
+      </div>
+
+      <div class="manual-verification">
+        <form id="search-vp-id">
+          <h2 class="scanner-title">Manual Search</h2>
+          <label class="manual-label">Type Visitor Pass code here</label>
+          <input class="manual-input" name="VP_ID" type="text" pattern="^VP\d+$"
+            title="Please enter a valid VP number (e.g., VP123)" required><br><br><br>
+          <button class="search-btn">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <img src="" alt="">
+  <!-- Your script and jQuery includes here -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+
+      var idNum;
+
+      ////// For manually getting code///////
+      $('.search-btn').click(function () {
+        var idNum = $('.manual-input').val();
+
+      });
+
+      //////// Processing the VP code by maunal process/////////
+      $('#search-vp-id').submit(function (e) {
+        e.preventDefault();
+
+        $.ajax({
+          type: 'post',
+          url: 'vp_processor_backend.php',
+          data: $('#search-vp-id').serialize(),
+          datatype: 'json',
+          success: function (data) {
+            window.location.href = "visitor_pass.php";
+          },
+          error: function (xhr, error, status) {
+            console.error('Error: ' + error + '' + status);
+          }
+        })
+
+      });
+
+      /////// For upper case /////////////
+      $('.manual-input').on('input', function () {
+        $(this).val($(this).val().toUpperCase());
+      });
+
+
+      //////////////// Changing div///////////
+      $('.swap-manual').click(function () {
+        $('.scanner-container').css('display', 'none');
+        $('.manual-verification').css('display', 'block');
+      })
+
+
+      ////////// Fliping camer///////////
+      // $(function () {
+      //   var canvas = document.getElementById('canvas');
+      //   var ctx = canvas.getContext('2d');
+      //   var video = document.getElementById('video');
+
+      //   video.addEventListener('loadedmetadata', function () {
+      //     ctx.translate(video.videoWidth, 0);
+      //     ctx.scale(-1, 1);
+      //   });
+
+      // });
+
+      ////////// Scanning operation ////////////
+      let scanner;
+
+      function onScanSuccess(result) {
+        alert(`${result}`);
+        console.log(`Code matched = ${result}`);
+        $.ajax({
+          type: 'post',
+          url: 'vp_processor_backend.php',
+          data: {'VP_ID' : result},
+          datatype: 'json',
+          success: function (data) {
+            window.location.href = "visitor_pass.php";
+          },
+          error: function (xhr, error, status) {
+            console.error('Error: ' + error + '' + status);
+          }
+        })
+      }
+
+
+      function onScanFailure(error) {
+        console.warn(`Code scan error = ${error}`);
+      }
+
+      function startScanning() {
+        if (scanner) {
+          scanner.stop();
+        }
+
+        scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+        scanner.addListener('scan', function (content) {
+          onScanSuccess(content);
+        });
+
+        Instascan.Camera.getCameras().then(function (cameras) {
+          if (cameras.length > 0) {
+            scanner.start(cameras[0]);
+          } else {
+            console.error('No cameras found');
+          }
+        }).catch(function (e) {
+          console.error('Error getting cameras:', e);
+        });
+      }
+
+      $("#startScan").click(function () {
+        console.log("Start button clicked!");
+        startScanning();
+      });
+
+      $("#stopScan").click(function () {
+        console.log("Stop button clicked!");
+        if (scanner) {
+          scanner.stop();
+        }
+      });
+
+    });
+
+
+
+  </script>
+</body>
+
+</html>

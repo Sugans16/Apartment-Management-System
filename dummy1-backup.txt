@@ -1,0 +1,118 @@
+<?php
+    // Database connection details
+    $hostname = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ams";
+
+    // Create connection
+    $conn = new mysqli($hostname, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="request-table.css">
+</head>
+
+<body>
+    <div class="background-img-table">
+    <header>
+      <nav>
+        <img class="logo" src="images/logo/App Logo2 White.png" alt="company-logo">
+      </nav>
+    </header>
+    
+
+    <div class="card_containerz">
+
+            <h1 class="list-head">Complaints</h1>
+
+        <?php
+       
+        $sql = "SELECT * FROM ams_complaint";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+
+                echo '<div class="cardz">';
+            
+                echo'<div class="box">';
+                echo'<div class="boz">';
+
+                echo '<div class="round">';
+                
+                echo '<span id="id">' . $row['id'] . '</span>';
+                echo '</div>';
+                
+                echo '<div class="user">';
+                echo '<label for="username">username </label> <br>';
+                echo '<span id="username">' . ucfirst($row['Username'] ). '</span>';
+                echo '</div>';
+                echo '</div>';
+
+
+                echo '<div class="">';
+                echo '<label for="complaint_value">ComplaintReg </label> <br>';
+                echo '<span id="complaint_value">' . ucwords($row['ComplaintRegarding']) . '</span>';
+                echo '</div>';
+                echo '</div>';
+                
+
+                
+                echo '<div class="description-container">';
+               
+                echo '<div id="description_value" class="description-content">';
+                echo ucwords($row['Description']);
+              
+                echo '</div>';
+                echo '</div>';
+                
+                echo '<div class="box3">';
+               
+                echo '<button id="SelectButton" onclick="display()"> Select</button>';
+
+                echo '<button class="update-status-btn">Submit</button>';
+               
+                echo '</div>';
+
+                echo '</div>';
+            }
+        } else {
+            echo "No complaints found.";
+        }
+        ?>
+    </div>
+    </div> 
+    <script>
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     const showMoreButtons = document.querySelectorAll('.show-more-btn');
+        //     showMoreButtons.forEach(button => {
+        //         button.addEventListener('click', function () {
+        //             const content = this.previousElementSibling;
+        //             content.classList.toggle('show-more-content');
+        //             if (content.classList.contains('show-more-content')) {
+        //                 this.textContent = 'Show Less';
+        //                 content.style.maxHeight = 'none';
+        //             } else {
+        //                 this.textContent = 'Show More';
+        //                 content.style.maxHeight = '100px'; /* Adjust the maximum height based on your card design */
+        //             }
+        //         });
+        //     });
+        // });
+    </script>
+
+</body>
+
+</html>

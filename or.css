@@ -1,0 +1,128 @@
+.scanner-container,
+.manual-verification {
+  width: 48rem;
+  margin: auto;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 5rem 5rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.manual-verification {
+  display: none;
+  margin-top: 10rem;
+}
+
+.scanner-title {
+  font-size: 3.4rem;
+  font-family: "Overpass", sans-serif;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 4rem;
+}
+
+.scanner-text {
+  font-size: 1.4rem;
+  color: #888;
+  padding: 0 5rem;
+  margin-bottom: 3rem;
+  letter-spacing: 0.1rem;
+}
+
+.control-scanner-hight {
+  height: 23.5rem;
+  width: 33rem;
+  overflow: hidden;
+  border: 5px solid #6998e8;
+  border-radius: 10px;
+  margin: auto;
+}
+
+video {
+  width: 36rem;
+  background-color: #fff;
+  /* -webkit-transform: scaleX(-1);
+  transform: scaleX(-1); */
+}
+
+.mg-1 {
+  margin-top: 1.5rem;
+}
+
+.swap-manual {
+  color: #ef8d32;
+  cursor: pointer;
+}
+
+.scanner-btn {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.start-btn {
+  width: 22rem;
+  margin: auto;
+  padding: 1rem 3rem;
+  background-color: #6998e8;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Overpass", sans-serif;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: all 0.3s;
+}
+
+.stop-btn {
+  width: 22rem;
+  margin: auto;
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Overpass", sans-serif;
+  border-radius: 25px;
+  border: 2px solid #6998e8;
+  color: #6998e8;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.stop-btn:hover,
+.start-btn:hover {
+  width: 19rem;
+}
+
+.manual-label {
+  color: #333;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 3;
+}
+
+.manual-input {
+  border: 2px solid #6998e8;
+  padding: 1rem;
+  text-align: center;
+}
+
+.search-btn {
+  padding: 0.5rem 3rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: "Overpass", sans-serif;
+  border-radius: 25px;
+  border: none;
+  color: #fff;
+  background-color: #6998e8;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search-btn:hover {
+  padding: 0.5rem 2rem;
+}

@@ -1,0 +1,174 @@
+.backgroundimg-registration {
+  background-image: url("images/Background/registration_background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  max-width: 120rem;
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.img-box {
+  justify-self: end;
+}
+
+.regi-img {
+  width: 60rem;
+  border-radius: 25px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.flex-form {
+  height: 44rem;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 3rem 1rem 0;
+  position: relative;
+}
+
+.regi-box {
+  justify-self: start;
+  background-color: white;
+
+  padding: 8.6rem 15rem 4.8rem;
+  border-radius: 25px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.regi-head {
+  font-family: "Overpass", sans-serif;
+  font-size: 2.8rem;
+  line-height: 2;
+  color: #33557d;
+  margin-top: -3rem;
+}
+
+#sub-role-input {
+  display: none;
+}
+
+/* .regi-subhead {
+  font-size: 1.4rem;
+  color: #555;
+} */
+
+.registration-input {
+  font-size: 1.8rem;
+  padding: 0.8rem;
+  border: none;
+  border-bottom: 1px solid #33557d;
+}
+
+.option {
+  font-size: 1.4rem;
+  color: #555;
+}
+
+.registration-input::placeholder {
+  color: #555;
+}
+
+.flex-form > button {
+  font-family: "Overpass", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  margin-top: 3.5rem;
+  border: none;
+  padding: 1rem 2rem;
+  color: #fff;
+  background-color: #f92c58;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.flex-form > button:hover {
+  background-color: #db3056;
+  cursor: pointer;
+}
+
+.regi-show,
+.regi-hide {
+  font-size: 1.8rem;
+  color: #555;
+  border-bottom: 1px solid #555;
+  padding: 0.93rem;
+}
+
+.regi-hide {
+  display: none;
+}
+
+.i-password-regi {
+  width: 25rem;
+}
+
+@media (max-width: 66em) {
+  main {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .backgroundimg-registration {
+    height: 130vh;
+    width: 100%;
+  }
+
+  .img-box,
+  .regi-box {
+    justify-self: center;
+  }
+
+  .regi-img {
+    border-radius: 25px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .regi-box {
+    padding: 8.5rem 7.5rem 5.5rem;
+    border-radius: 25px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}
+
+#head-pack {
+  display: inline-block;
+}
+
+.heading-item {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  border: 3px solid #6998e8;
+  border-radius: 5px;
+}
+
+.head-label {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #6998e8;
+  padding: 0.5rem 2rem;
+}
+
+.pass_type {
+  font-weight: bold;
+  padding: 1.08rem;
+}
